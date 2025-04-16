@@ -145,7 +145,6 @@ tuple<int, int, int> findNextCell(int** BOARD) {
                     bestCol = c;
                 }
             }
-
             if ((minOptions) == 1) return {bestRow, bestCol, 1};
         }
     }
