@@ -120,9 +120,12 @@ tuple<int, int, int> findNextCell(int** BOARD) {
      */
     int minOptions = INT_MAX;
     int bestRow = -1, bestCol = -1;
-
+    int count;
+    int emptyCells = 0;
     for (int r = 0; r < 9; r++) {
         for (int c = 0; c < 9; c++) {
+            count = 0;
+
             // TODO: Complete the logic inside this nested loop
             /**
              * - Check if BOARD[r][c] is empty (value == 0).
@@ -131,9 +134,23 @@ tuple<int, int, int> findNextCell(int** BOARD) {
              * - Track the cell with the minimum number of options.
              * - Implement early exit if a cell with only one option is found.
              */
+            if (!BOARD[r][c]) {
+                emptyCells++;
+                for (int i = 1; i <= 9; i++) {
+                    count += isValid(BOARD, r, c, i) ? 1 : 0;
+                }
+                if (minOptions > count) {
+                    minOptions = count;
+                    bestRow = r;
+                    bestCol = c;
+                }
+            }
+
+            if ((minOptions) == 1) return {bestRow, bestCol, 1};
         }
     }
-    return {bestRow, bestCol, minOptions};
+    if (emptyCells == 0) return {-1, -1, 0};
+    return {bestRow, bestCol, (minOptions)};
 }
 
 
@@ -157,7 +174,21 @@ bool solveBoardEfficient(int** BOARD)
      * @param BOARD A 9x9 Sudoku board to be solved.
      * @return true if the board is successfully solved, false otherwise.
      */
-    return false; //temporary
+    auto [r, c, k] = findNextCell(BOARD);
+    if (r==-1) return true;
+    if (k==0) return false;
+
+
+    for (int i = 1; i <= 9; i++) {
+        if (isValid(BOARD, r, c, i)) {
+            BOARD[r][c] = i;
+            if (solveBoardEfficient(BOARD)) {
+                return true;
+            }
+            BOARD[r][c]=0;
+        }
+    }
+    return false;
 }
 
 
@@ -168,6 +199,6 @@ bool solve(int** board, const bool& efficient) {
      * - If efficient == true, return solveBoardEfficient(board).
      * - Else, return solveBoard(board, 0, 0).
      */
-
+    if (efficient) return solveBoardEfficient(board);
     return solveBoard(board, 0, 0); // Temporary: Always calls basic solver
 }
