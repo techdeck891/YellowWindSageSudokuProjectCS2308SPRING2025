@@ -23,29 +23,50 @@
 
 #include <vector>
 
- /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+/**
+ * @brief Creates an empty Sudoku board
+ *
+ * Creates a 9x9 array of 0s for Sudoku
+ *
+ * @return Reference to the empty sudoku board
+ */
 int** getEmptyBoard();
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Creates randomized vector
+ *
+ * Creates a shuffled vector of values 1-9
+ *
+ * @return Shuffled vector
+ */
 std::vector<int> getShuffledVector();
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Fills the independent boxes
+ *
+ * Fills boxes 1, 5, and 9 with random values given by getShuffledVector()
+ *
+ * @param BOARD Sudoku board to fill
+ */
 void fillBoardWithIndependentBox(int** BOARD);
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Deletes n items from the board
+ *
+ * Randomly deletes items from a random location until count is the same as n
+ *
+ * @param BOARD Sudoku board to delete from
+ * @param n Number of items to delete
+ */
 void deleteRandomItems(int** BOARD, const int& n);
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Generates a solvable board
+ *
+ * Creates board using calls to getEmptyBoard(), fillBoardWithIndependentBox(), solve(), and deleteRandomItems()
+ *
+ * @param empty_boxes Number of empty boxes to be in the sudoku puzzle
+ */
 int** generateBoard(const int& empty_boxes);
 
 #endif // GENERATOR_H
