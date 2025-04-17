@@ -24,8 +24,11 @@
 using namespace std;
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
+ * @brief Deletes the board and sets it to a nullptr
+ *
+ * @param BOARD pointer to a 2d board
+ * @param rows Number of rows in the board (Default = 9)
+ */
 void deallocateBoard(int** BOARD, const int& rows = 9);
 
 /**
