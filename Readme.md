@@ -144,8 +144,8 @@ You will find `TODO` comments in the following files:
 
 4. **`sudoku_io.cpp` / `sudoku_io.h`**
    - **Header File (`sudoku_io.h`)**
-     - [ ] Provide function prototypes for all functions in `sudoku_io.cpp`.
-     - [ ] Add appropriate docstrings for each function prototype based on examples in the code.
+     - ✅ Provide function prototypes for all functions in `sudoku_io.cpp`.
+     - ✅ Add appropriate docstrings for each function prototype based on examples in the code.
 
    - **CPP File (`sudoku_io.cpp`)**
 
@@ -186,25 +186,25 @@ You will find `TODO` comments in the following files:
         - Retrieves all Sudoku puzzle file paths from the specified folder.
 
      - **`createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_boxes, const string& destination, const string& prefix)`**
-        - [ ] Implement memory deallocation using `deallocateBoard()` after each board is processed.
-        - [ ] Ensure no memory leaks by freeing dynamically allocated boards after writing to files.
+        - ✅ Implement memory deallocation using `deallocateBoard()` after each board is processed.
+        - ✅ Ensure no memory leaks by freeing dynamically allocated boards after writing to files.
 
      - **`displayProgressBar(int current, int total, int barWidth = 50)`**
         - ✅ Already implemented — no changes needed.
         - Displays a console-based progress bar.
 
      - **`solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const string& destination, const string& prefix)`**
-        - [ ] Implement memory deallocation using `deallocateBoard()` after each puzzle is solved and written to file.
-        - [ ] Ensure solved boards are properly validated and written to disk.
+        - ✅ Implement memory deallocation using `deallocateBoard()` after each puzzle is solved and written to file.
+        - ✅ Ensure solved boards are properly validated and written to disk.
 
      - **`deepCopyBoard(int** original)`**
         - ✅ Already implemented — no changes needed.
         - Performs a deep copy of a given 9x9 Sudoku board.
 
      - **`compareSudokuSolvers(const int& experiment_size, const int& empty_boxes)`**
-        - [ ] Implement memory deallocation using `deallocateBoard()` for both `board1` and `board2` after each experiment.
-        - [ ] Ensure accurate performance comparison between basic and efficient solvers.
-        - [ ] Display performance results, including average time and valid solution counts.
+        - ✅ Implement memory deallocation using `deallocateBoard()` for both `board1` and `board2` after each experiment.
+        - ✅ Ensure accurate performance comparison between basic and efficient solvers.
+        - ✅ Display performance results, including average time and valid solution counts.
 
 ## Assignment Submission
 
