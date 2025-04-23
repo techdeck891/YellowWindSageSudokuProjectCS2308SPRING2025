@@ -52,7 +52,8 @@ int main() {
 
     // Clean up memory
     deallocateBoard(board);
-
+    solveAndSaveNPuzzles(NUM_PUZZLE_TO_GENERATE, PATH_TO_PUZZLES, PATH_TO_SOLUTIONS, PUZZLE_PREFIX);
+    compareSudokuSolvers(NUM_PUZZLE_TO_GENERATE, COMPLEXITY_EMPTY_BOXES);
     return 0;
 }
 #else
