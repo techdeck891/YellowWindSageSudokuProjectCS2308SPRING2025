@@ -186,7 +186,6 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
             cout << "!! Failed to write(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
         }
         deallocateBoard(BOARD);
-        BOARD = nullptr;
     }
     cout << total_success << " files written out of " << num_puzzles <<endl;
 }
@@ -246,7 +245,6 @@ void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const st
             }
         }
         deallocateBoard(sudoku);
-        sudoku = nullptr;
     }
 }
 
@@ -294,8 +292,8 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
     int validSolutionsSolveBoard = 0;
     int validSolutionsEfficientSolveBoard = 0;
 
-    int** board1 = nullptr; //efficient
-    int** board2 = nullptr; //basic
+    int** board1 = nullptr;
+    int** board2 = nullptr;
     bool solved = false;
 
     cout << "Running Sudoku Solver Comparisons...\n";
@@ -346,8 +344,6 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
         // deallocating boards after each loop:
         deallocateBoard(board1);
         deallocateBoard(board2);
-        board1 = nullptr;
-        board2 = nullptr;
 
     }
 
