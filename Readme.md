@@ -14,6 +14,7 @@ Collaboration wise we bounced ideas off of each other to come up with the best p
 Another important lesson we learned was about code optimization. When running the program, we can clearly see that the `efficientSolver` is not as fast as the regular solve board function when there are less empty cells.
 This taught us that even if a solution works, it doesn't always mean it is the best possible solution or form of the solution.
 
+
 ### Part 1: Complete the Code
 
 **GitHub Repository Link:** https://github.com/techdeck891/YellowWindSageSudokuProjectCS2308SPRING2025#

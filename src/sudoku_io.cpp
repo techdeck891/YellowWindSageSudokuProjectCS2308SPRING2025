@@ -186,6 +186,7 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
         }else{
             cout << "!! Failed to write(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
         }
+        deallocateBoard(BOARD);
     }
     cout << total_success << " files written out of " << num_puzzles <<endl;
 }
@@ -239,10 +240,12 @@ void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const st
                 if(writeSudokuToFile(sudoku, filename)){
                     total_success_write++;
                 }
+
                 cout << "Puzzle Solved Written(over available): " << total_success_write << "/" << path_to_sudokus.size() << " | ";
                 cout << "Puzzle Solved Written(over total): " << total_success_write << "/" << num_puzzles << endl;
             }
         }
+        deallocateBoard(sudoku);
     }
 }
 
@@ -338,6 +341,11 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
 
         // -------------------- Progress Bar Update --------------------
         displayProgressBar(i, experiment_size);
+
+        // deallocating boards after each loop:
+        deallocateBoard(board1);
+        deallocateBoard(board2);
+
     }
 
     cout << endl;  // Move to the next line after progress bar is done.
