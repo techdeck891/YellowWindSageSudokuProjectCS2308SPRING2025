@@ -97,13 +97,13 @@ Answer the following questions in your report:
 
 3. Why do you think `efficientSolver` took more time than the regular solver? What strategies would you implement to make `efficientSolver` actually efficient?
 
-`efficientSolver` did not universally take more time than regular solver. It was always significantly faster than the board with 64 empty cells. 
-However, in the boards with less empty cells, it started becoming progressively slower than the rest of the board. This is becuase of the `findNextCell`
+`efficientSolver` did not universally take more time than regular solver. It was always significantly faster than the regular board solver when there were 64 empty cells. 
+However, in the puzzles with less empty cells, it started becoming progressively slower than the regular board solver. This is because the `findNextCell`
 function loops through the entire board every single time it's called. So when there are less empty spaces, the `efficientSolver` spends more times looping through the whole board
-multiple times. When there are less empty cells, the regular solver ends up looping less than the `efficientSolver` because it doesn't have to re-loop through the entire board every time to get the next cell.
+than the regular solver. When there are less empty cells, the regular solver ends up looping less than the `efficientSolver` because it doesn't have to re-loop through the entire board every time to get the next cell.
 
 Some strategies to implement to make `efficientSolver` faster include searching for naked singles and other basic sudoku rules to reduce the amount of iterations early on. 
-It would also be beneficial to be able to save the possible options for other cells to reduce the amount of looping and overhead there is.
+It would also be beneficial to be able to save the possible options for other cells to reduce the amount of looping and overhead there is. Some other strategies to improve runtime would be to have an array of coordinates where empty spaces exist, and only iterate through that array instead of the entire board
 
 4. Can you make this a generalized solution, meaning board that can solve any NxN grid where N is a square number? Can you briefly share your ideas?
 
