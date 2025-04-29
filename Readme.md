@@ -6,7 +6,7 @@ The objective of this project is to create and solve sudoku puzzles with two dif
 One method solves the puzzle with brute force, and the other attempts to be more efficient.
 Some major challenges we faced while completing this solver were figuring out how to divide the work up, 
 how to make GitHub work optimally, and how to make the efficient solver actually efficient.
-We used strategies such as recursion, and using a minimum options variable in the `findNextCell` function.
+We used strategies such as recursion, and using a minimum options variable in the `findNextCell` function to make the `efficientSolver` more efficient.
 
 By completing this project, we learned how to use recursion better by seeing it used in two different contexts.
 We also learned how to analyze code to see possibilities for better strategies and methods. 
@@ -25,8 +25,8 @@ TA: tousifulhaque
 
 **Team Members:**
 
-Karsten Salinas (KmanKnight)
-Clay Zetune (clayZzz1)
+Karsten Salinas (KmanKnight)  
+Clay Zetune (clayZzz1)  
 Kai Davidson (techdeck891)
 
 ### Part 2: Visualize Program Flow
@@ -96,10 +96,10 @@ Answer the following questions in your report:
 
 3. Why do you think `efficientSolver` took more time than the regular solver? What strategies would you implement to make `efficientSolver` actually efficient?
 
-`efficientSolver` did not universally take more time than regular solver. It was always significantly faster than the board with 64 empty cells. 
-However, in the boards with less empty cells, it started becoming progressively slower than the rest of the board. This is becuase of the `findNextCell`
+`efficientSolver` did not universally take more time than regular solver. It was always significantly faster than the regular board solver when there were 64 empty cells. 
+However, in the puzzles with less empty cells, it started becoming progressively slower than the regular board solver. This is because the `findNextCell`
 function loops through the entire board every single time it's called. So when there are less empty spaces, the `efficientSolver` spends more times looping through the whole board
-multiple times. When there are less empty cells, the regular solver ends up looping less than the `efficientSolver` because it doesn't have to re-loop through the entire board every time to get the next cell.
+than the regular solver. When there are less empty cells, the regular solver ends up looping less than the `efficientSolver` because it doesn't have to re-loop through the entire board every time to get the next cell.
 
 Some strategies to implement to make `efficientSolver` faster include searching for naked singles and other basic sudoku rules to reduce the amount of iterations early on. 
 It would also be beneficial to be able to save the possible options for other cells to reduce the amount of looping and overhead there is.
@@ -113,7 +113,7 @@ Then finally you would need to change the start col and start row are calculated
 
 5. Did this project challenge and motivate you? We would appreciate your feedback on your experience. Feel free to share what you learned, what aspects of the project you found most engaging or challenging, and any suggestions you have for improving future projects. Your insights are valuable in helping us enhance future learning experiences.
 
-This project did challenge us to some degree; however, there was very minimal actual coding required. We feel that it would be more beneficial for collaboration and learning if there was more to work on for the project.
+This project did challenge us to some degree; however, there was very minimal actual coding required. We feel that it would be more beneficial for collaboration and learning if there was more actual code to work on for the project.
 There was not enough coding work to evenly and easily split up among our three group members.
 
 
