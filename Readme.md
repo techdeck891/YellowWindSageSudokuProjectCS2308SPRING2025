@@ -81,6 +81,83 @@ main()
 
 - Create a similar flowchart to illustrate the execution flow of your Sudoku solver in non-DEBUG mode.
 
+```text
+main()
+│
+├── initDataFolder()
+│   └── [creates a data folder and two subfolders for puzzles and solutions]
+│
+├── createAndSaveNPuzzles(10, 45, "data/puzzles/", "PUZZLE")
+│   └── [Loops 10 times]
+│       │
+│       ├── generateBoard(45)
+│       │   ├── getEmptyBoard()
+│       │   │   └── [Creates 2d dynamic int array]
+│       │   │   └── [Fills board array with 0's]
+│       │   │   └── [Returns empty board to generateBoard()]
+│       │   │
+│       │   ├── fillBoardWithIndependentBox(board)
+│       │   │   │
+│       │   │   └── [Loops 3 times]
+│       │   │       │
+│       │   │       ├── getShuffledVector()
+│       │   │       │   └── [Creates and shuffles vector with numbers 1-9]
+│       │   │       │   └── [Returns shuffled vector]
+│       │   │       │
+│       │   │       └── [Loops 9 times]
+│       │   │           └── [Fills box from each row with shuffled vector]
+│       │   │
+│       │   ├── solveBoard(board)
+│       │   │   │
+│       │   │   ├── [Recursively loops through the board until an empty cell is found]
+│       │   │   │
+│       │   │   └── [Loops through 9 times]
+│       │   │       │
+│       │   │       ├── isValid(Board, r, c, k)
+│       │   │       │   └── [Loops through row and column to determine candidate k eligibility]
+│       │   │       │   └── [Determines subgrid indices]
+│       │   │       │   └── [Loops through subgrid to determine candidate k eligibility]
+│       │   │       │   └── [Returns true if k not found in subgrid, row, or column and false if it was]
+│       │   │       │
+│       │   │       ├── [Recursively solve board]
+│       │   │       ├── [Return true if board is solved]
+│       │   │       └── [If no valid number placed remove number from cell and trigger backtracking]
+│       │   │
+│       │   ├── deleteRandomItems(board, 45)
+│       │   │   └── [Check for non-null board and valid empty box number]
+│       │   │   └── [Generate random indices and set those cells to 0 until 45 cells have been empptied]
+│       │   │
+│       │   └── [Return created puzzle]
+│       │
+│       ├──[Generates filename for generated puzzle]
+│       │
+│       ├── writeSudokuToFile(board, filename)
+│       │   ├── boardToString(board, &content)
+│       │   │   └── [Converts board to string]
+│       │   │
+│       │   ├──[Writes results of boardToString() to file]
+│       │   └──[Returns true or false depending on if the content was written to file or not]
+│       │
+│       └── deallocateBoard(board)
+│           └── [Deallocates board memory]
+│
+├── solveAndSaveNPuzzles(10, "data/puzzles/", "data/solutions/", "SOLUTION")
+│   ├──[Reads unsolved puzzles from files]
+│   ├── solve(sudoku)
+│   │   └──[Returns the results of solveBoard(board, 0, 0)]
+│   │
+│   └── [Writes solved sudoku puzzles to solutions files in solutions folder]
+│
+├── compareSudokuSolvers(experiment_size, empty_boxes)
+│   ├──[Creates a board and copies the first one]
+│   ├──[Test and save the solve time for both solvers]
+│   ├──[Validate Solutions]
+│   └── deallocateBoard(board)
+│           └── [Deallocates board memory]
+│
+└── [Returns 0]
+```
+
 ### Part 3: Reflective Questions
 
 Answer the following questions in your report:
