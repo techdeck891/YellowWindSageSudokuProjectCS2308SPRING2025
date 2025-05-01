@@ -145,16 +145,6 @@ Then finally you would need to change the start col and start row are calculated
 This project did challenge us to some degree; however, there was very minimal actual coding required. We feel that it would be more beneficial for collaboration and learning if there was more actual code to work on for the project.
 There was not enough coding work to evenly and easily split up among our three group members.
 
-
-## Submission Guidelines
-
-- **Report (Submit as a PDF file):**
-
-    - **Overview:** Provide a broader overview and your take on the project. Include the link to your GitHub repository.
-    - **Part 2:** Visualize the flow of the program using a flowchart.
-    - **Part 3:** Answer the reflective questions.
-    - **Final Thoughts:** Share your concluding thoughts about the project experience.
-
 ## Closing Thoughts
 
 Overall, this was a challenging and fun project that encouraged collaboration. 
